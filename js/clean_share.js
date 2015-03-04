@@ -21,10 +21,10 @@ function cleanShareLoad() {
 
     var attr;
     attr = container.getAttribute('image_base_url');
-    if( attr != null )
+    if (attr != null)
         image_base_url = attr;
     attr = container.getAttribute('image_suffix');
-    if( attr != null )
+    if (attr != null)
         image_suffix = attr;
 
     var html = '';
