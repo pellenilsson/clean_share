@@ -14,6 +14,11 @@ var services = [
         name: 'Twitter',
         url: 'http://twitter.com/share?url=@URL@&text=@TITLE@&via=@TWITTER_USER@',
     },
+    {
+        ident: 'tumblr',
+        name: 'Tumblr',
+        url: 'http://www.tumblr.com/share/link?url=@URL@&name=@TITLE@',
+    },
 ];
 
 function cleanShareLoad() {
