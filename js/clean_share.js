@@ -1,5 +1,10 @@
 var services = [
     {
+        ident: 'email',
+        name: 'E-mail',
+        url: 'mailto:?subject=@TITLE@&body=@URL@%0A',
+    },
+    {
         ident: 'googleplus',
         name: 'Google+',
         url: 'https://plus.google.com/_/+1/confirm?url=@URL@',
