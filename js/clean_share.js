@@ -32,7 +32,7 @@ function cleanShareLoad() {
         var url = services[i].url
             .replace('@URL@', encodeURIComponent(window.location.href))
             .replace('@TITLE@', encodeURIComponent(document.title));
-        html += '<a href="' + url + '"><img alt="' + services[i].name + '" src="' + image_base_url + '/' + services[i].ident + image_suffix + '"></a>';
+        html += '<a href="' + url + '" target="_blank"><img alt="' + services[i].name + '" src="' + image_base_url + '/' + services[i].ident + image_suffix + '"></a>';
     }
 
     container.innerHTML = html;
