@@ -9,6 +9,11 @@ var services = [
         name: 'Facebook',
         url: 'http://www.facebook.com/sharer.php?u=@URL@&t=@TITLE@',
     },
+    {
+        ident: 'twitter',
+        name: 'Twitter',
+        url: 'http://twitter.com/share?url=@URL@&text=@TITLE@&via=@TWITTER_USER@',
+    },
 ];
 
 function cleanShareLoad() {
@@ -18,6 +23,7 @@ function cleanShareLoad() {
 
     image_base_url = '/img';
     image_suffix = '-color.png';
+    twitter_user = '';
 
     var attr;
     attr = container.getAttribute('image_base_url');
@@ -26,12 +32,17 @@ function cleanShareLoad() {
     attr = container.getAttribute('image_suffix');
     if (attr != null)
         image_suffix = attr;
+    attr = container.getAttribute('twitter_user');
+    if (attr != null)
+        twitter_user = attr;
 
     var html = '';
     for (var i = 0; i < services.length; i++) {
         var url = services[i].url
             .replace('@URL@', encodeURIComponent(window.location.href))
-            .replace('@TITLE@', encodeURIComponent(document.title));
+            .replace('@TITLE@', encodeURIComponent(document.title))
+            .replace('@TWITTER_USER@', encodeURIComponent(twitter_user))
+        ;
         html += '<a href="' + url + '" target="_blank"><img alt="' + services[i].name + '" src="' + image_base_url + '/' + services[i].ident + image_suffix + '"></a>';
     }
 
