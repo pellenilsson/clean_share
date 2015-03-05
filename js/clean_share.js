@@ -24,6 +24,11 @@ var services = [
         name: 'Tumblr',
         url: 'http://www.tumblr.com/share/link?url=@URL@&name=@TITLE@',
     },
+    {
+        ident: 'linkedin',
+        name: 'LinkedIn',
+        url: 'http://www.linkedin.com/shareArticle?url=@URL@&title=@TITLE@',
+    },
 ];
 
 function cleanShareLoad() {
