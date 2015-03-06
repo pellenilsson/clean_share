@@ -29,6 +29,11 @@ var services = [
         name: 'LinkedIn',
         url: 'http://www.linkedin.com/shareArticle?url=@URL@&title=@TITLE@',
     },
+    {
+        ident: 'blogger',
+        name: 'Blogger',
+        url: 'https://www.blogger.com/blog_this.pyra?t&u=@URL@&n=@TITLE@',
+    },
 ];
 
 function cleanShareLoad() {
