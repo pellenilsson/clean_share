@@ -44,6 +44,7 @@ function cleanShareLoad() {
     image_base_url = '/img';
     image_suffix = '-color.png';
     twitter_user = '';
+    enabled_services = 'facebook,googleplus,twitter';
 
     var attr;
     attr = container.getAttribute('image_base_url');
@@ -55,15 +56,25 @@ function cleanShareLoad() {
     attr = container.getAttribute('twitter_user');
     if (attr != null)
         twitter_user = attr;
+    attr = container.getAttribute('enabled_services');
+    if (attr != null)
+        enabled_services = attr;
 
     var html = '';
-    for (var i = 0; i < services.length; i++) {
-        var url = services[i].url
-            .replace('@URL@', encodeURIComponent(window.location.href))
-            .replace('@TITLE@', encodeURIComponent(document.title))
-            .replace('@TWITTER_USER@', encodeURIComponent(twitter_user))
-        ;
-        html += '<a href="' + url + '" target="_blank"><img alt="' + services[i].name + '" src="' + image_base_url + '/' + services[i].ident + image_suffix + '"></a>';
+    var es = enabled_services.split(',');
+    for (var i = 0; i < es.length; i++) {
+        for (var j = 0; j < services.length; j++) {
+            if (services[j].ident != es[i])
+                continue;
+            var url = services[j].url
+                .replace('@URL@', encodeURIComponent(window.location.href))
+                .replace('@TITLE@', encodeURIComponent(document.title))
+                .replace('@TWITTER_USER@', encodeURIComponent(twitter_user))
+            ;
+            html += '<a href="' + url + '" target="_blank"><img alt="' + services[j].name + '" src="'
+                + image_base_url + '/' + services[j].ident + image_suffix + '"></a>';
+            break;
+        }
     }
 
     container.innerHTML = html;
