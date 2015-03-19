@@ -47,16 +47,16 @@ function cleanShareLoad() {
     enabled_services = 'facebook,googleplus,twitter';
 
     var attr;
-    attr = container.getAttribute('image_base_url');
+    attr = container.getAttribute('data-image-base-url');
     if (attr != null)
         image_base_url = attr;
-    attr = container.getAttribute('image_suffix');
+    attr = container.getAttribute('data-image-suffix');
     if (attr != null)
         image_suffix = attr;
-    attr = container.getAttribute('twitter_user');
+    attr = container.getAttribute('data-twitter-user');
     if (attr != null)
         twitter_user = attr;
-    attr = container.getAttribute('enabled_services');
+    attr = container.getAttribute('data-enabled-services');
     if (attr != null)
         enabled_services = attr;
 
