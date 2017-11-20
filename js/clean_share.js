@@ -7,7 +7,7 @@ var services = [
     {
         ident: 'googleplus',
         name: 'Google+',
-        url: 'https://plus.google.com/_/+1/confirm?url=@URL@'
+        url: 'https://plus.google.com/share?url=@URL@'
     },
     {
         ident: 'facebook',
