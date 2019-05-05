@@ -5,11 +5,6 @@ var services = [
         url: 'mailto:?subject=@TITLE@&body=@URL@%0A'
     },
     {
-        ident: 'googleplus',
-        name: 'Google+',
-        url: 'https://plus.google.com/share?url=@URL@'
-    },
-    {
         ident: 'facebook',
         name: 'Facebook',
         url: 'http://www.facebook.com/sharer.php?u=@URL@&t=@TITLE@'
@@ -49,7 +44,7 @@ function cleanShareLoad() {
     image_base_url = '/img';
     image_suffix = '-color.png';
     twitter_user = '';
-    enabled_services = 'facebook,googleplus,twitter';
+    enabled_services = 'facebook,twitter';
 
     attr = container.getAttribute('data-image-base-url');
     if (attr !== null) {

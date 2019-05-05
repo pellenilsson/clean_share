@@ -7,7 +7,6 @@ for use on blogs and other web sites.
 Currently these services are supported:
 
 * E-mail
-* Google+
 * Facebook
 * Twitter
 * Tumblr
